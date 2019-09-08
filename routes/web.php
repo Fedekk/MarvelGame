@@ -13,6 +13,8 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('play', 'PlayController@start');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
