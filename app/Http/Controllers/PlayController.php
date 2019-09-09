@@ -6,10 +6,13 @@ use Illuminate\Support\Facades\Redis;
 
 class PlayController extends Controller {
     public function start(){
-        $redis = new Redis();
         $number = (string) rand(1,100);
-        if(!$redis::exists('number'))
-        $check=  $redis::set('number',$number, 'EX', 60*24);
-        return view('play', ['number' => $redis::get('number')]);
+        if(!Redis::exists('number')){
+        Redis::set('number',$number);
+        Redis::expire("Expire in one day", 86400);
+        echo 'rerew';
+        }
+        $valore = Redis::get('number');
+        return view('play', ['valore' => $valore]);
     }
 }

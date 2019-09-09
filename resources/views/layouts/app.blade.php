@@ -31,8 +31,10 @@
             <a href="{{ route('register') }}">{{ __('Register') }}</a>
             @endif
             @else
-            <a href="personaggi">Personaggi</a>
-            <a href="comics">Comics</a>
+            <a href="personaggi">Miei Personaggi</a>
+            <a href="comics">Miei Comics</a>
+            <a href="personaggiMarvel">Lista Personaggi</a>
+            <a href="comicsMarvel">Lista Comics</a>
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}

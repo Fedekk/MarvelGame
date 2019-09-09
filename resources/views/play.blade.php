@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    {{ $number }}
-    <form>
-    <select name="" id="">
+@extends('layouts.app')
+@section('content')
+<div id="content">
+    <form name="game">
+    <div>Il numero fortunato e': <span id="numero">{{ $valore }}</span></div>
+    <select name="category" >
     <option value="personaggi">Personaggi</option>
     <option value="comics">Comics</option>
     </select>
-    <button onclick="event.preventDefault()">Gioca</button>
+    <button onclick="play(event, document.game.category.options[document.game.category.selectedIndex].value, document.getElementById('numero').textContent);">Gioca</button>
     </form>
-</body>
-</html>
+    <div id="feedback"></div>
+</div>
+@endsection
